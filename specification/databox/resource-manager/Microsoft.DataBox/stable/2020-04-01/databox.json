@@ -4296,6 +4296,7 @@
         "validationType"
       ],
       "type": "object",
+      "default":  "ValidateAddress",
       "properties": {
         "validationType": {
           "description": "Identifies the type of validation response.",
