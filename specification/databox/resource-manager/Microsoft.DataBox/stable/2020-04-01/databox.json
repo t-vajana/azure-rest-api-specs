@@ -4311,6 +4311,7 @@
           "x-ms-enum": {
             "name": "ValidationInputDiscriminator",
             "modelAsExtensible": true,
+            "modelAsString":  false,
             "values": [
               {
                 "value": "ValidateAddress",
