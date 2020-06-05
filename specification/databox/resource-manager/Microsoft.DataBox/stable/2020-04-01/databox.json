@@ -163,6 +163,51 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.DataBox/locations/{location}/serviceHealth": {
+      "get": {
+        "tags": [
+          "Service"
+        ],
+        "description": "This method returns the health of partner services.",
+        "operationId": "Service_GetHealth",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/locationParameter"
+          },
+          {
+            "$ref": "#/parameters/apiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The service health response.",
+            "schema": {
+              "$ref": "#/definitions/ServiceHealthResponseList"
+            }
+          },
+          "default": {
+            "description": "Error response describing reason for operation failure.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ServiceGetHealth": {
+            "$ref": "./examples/ServiceGetHealth.json"
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/providers/Microsoft.DataBox/locations/{location}/validateAddress": {
       "post": {
         "tags": [
@@ -268,6 +313,48 @@
         "x-ms-examples": {
           "ServiceValidateInputs": {
             "$ref": "./examples/ServiceValidateInputs.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.DataBox/unregister": {
+      "post": {
+        "tags": [
+          "Service"
+        ],
+        "description": "Un-registers Provider",
+        "operationId": "Service_UnRegisterProvider",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/apiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "default": {
+            "description": "Error response describing reason for operation failure.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ServiceUnRegisterProvider": {
+            "$ref": "./examples/ServiceUnRegisterProvider.json"
           }
         }
       }
@@ -664,6 +751,174 @@
         }
       }
     },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBox/jobs/{jobName}/listCredentials": {
+      "post": {
+        "tags": [
+          "Jobs"
+        ],
+        "description": "This method gets the unencrypted secrets related to the job.",
+        "operationId": "Jobs_ListCredentials",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/resourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/jobNameParameter"
+          },
+          {
+            "$ref": "#/parameters/apiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of unencrypted credentials of the job.",
+            "schema": {
+              "$ref": "#/definitions/UnencryptedCredentialsList"
+            }
+          },
+          "default": {
+            "description": "Error response describing reason for operation failure.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": null
+        },
+        "x-ms-examples": {
+          "JobsListCredentials": {
+            "$ref": "./examples/JobsListCredentials.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBox/locations/{location}/availableSkus": {
+      "post": {
+        "tags": [
+          "Service"
+        ],
+        "description": "This method provides the list of available skus for the given subscription, resource group and location.",
+        "operationId": "Service_ListAvailableSkusByResourceGroup",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/resourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/locationParameter"
+          },
+          {
+            "$ref": "#/parameters/apiVersionParameter"
+          },
+          {
+            "name": "availableSkuRequest",
+            "in": "body",
+            "description": "Filters for showing the available skus.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AvailableSkuRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The list of available skus under Resource group.",
+            "schema": {
+              "$ref": "#/definitions/AvailableSkusResult"
+            }
+          },
+          "default": {
+            "description": "Error response describing reason for operation failure.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-pageable": {
+          "nextLinkName": "nextLink"
+        },
+        "x-ms-examples": {
+          "ServiceListAvailableSkusByResourceGroup": {
+            "$ref": "./examples/ServiceListAvailableSkusByResourceGroup.json"
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBox/locations/{location}/regionConfiguration": {
+      "post": {
+        "tags": [
+          "Service"
+        ],
+        "description": "This API provides configuration details specific to given region/location at Resource group level.",
+        "operationId": "Service_RegionConfigurationByResourceGroup",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/subscriptionIdParameter"
+          },
+          {
+            "$ref": "#/parameters/resourceGroupNameParameter"
+          },
+          {
+            "$ref": "#/parameters/locationParameter"
+          },
+          {
+            "$ref": "#/parameters/apiVersionParameter"
+          },
+          {
+            "name": "regionConfigurationRequest",
+            "in": "body",
+            "description": "Request body to get the configuration for the region at resource group level.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegionConfigurationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Region configuration response.",
+            "schema": {
+              "$ref": "#/definitions/RegionConfigurationResponse"
+            }
+          },
+          "default": {
+            "description": "Error response describing reason for operation failure.",
+            "schema": {
+              "$ref": "#/definitions/CloudError"
+            }
+          }
+        },
+        "x-ms-examples": {
+          "ServiceRegionConfigurationByResourceGroup": {
+            "$ref": "./examples/ServiceRegionConfigurationByResourceGroup.json"
+          }
+        }
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataBox/locations/{location}/validateInputs": {
       "post": {
         "tags": [
@@ -747,10 +1002,6 @@
               {
                 "value": "StorageAccount",
                 "description": "Storage Accounts ."
-              },
-              {
-                "value": "ManagedDisk",
-                "description": "Azure Managed disk storage."
               }
             ]
           }
@@ -774,6 +1025,7 @@
       "type": "object",
       "properties": {
         "type": {
+          "description": "Error type",
           "type": "string"
         },
         "info": {
@@ -937,14 +1189,6 @@
                 {
                   "value": "DataBox",
                   "description": "Data Box."
-                },
-                {
-                  "value": "DataBoxDisk",
-                  "description": "Data Box Disk."
-                },
-                {
-                  "value": "DataBoxHeavy",
-                  "description": "Data Box Heavy."
                 }
               ]
             }
@@ -1041,15 +1285,19 @@
       "type": "object",
       "properties": {
         "code": {
+          "description": "Cloud error description",
           "type": "string"
         },
         "message": {
+          "description": "Cloud error message",
           "type": "string"
         },
         "target": {
+          "description": "Cloud error target",
           "type": "string"
         },
         "details": {
+          "description": "Cloud error details",
           "type": "array",
           "items": {
             "$ref": "#/definitions/CloudError"
@@ -1057,6 +1305,7 @@
           "readOnly": true
         },
         "additionalInfo": {
+          "description": "Cloud error additional info",
           "type": "array",
           "items": {
             "$ref": "#/definitions/AdditionalErrorInfo"
@@ -1129,14 +1378,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box orders."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk orders."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy orders."
               }
             ]
           }
@@ -1191,10 +1432,6 @@
               {
                 "value": "StorageAccount",
                 "description": "Storage Accounts ."
-              },
-              {
-                "value": "ManagedDisk",
-                "description": "Azure Managed disk storage."
               }
             ]
           }
@@ -1392,11 +1629,7 @@
             "values": [
               {
                 "value": "StorageAccount",
-                "description": "Storage Accounts ."
-              },
-              {
-                "value": "ManagedDisk",
-                "description": "Azure Managed disk storage."
+                "description": "Storage Accounts."
               }
             ]
           }
@@ -1966,14 +2199,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy."
               }
             ]
           }
@@ -2050,9 +2275,11 @@
       "type": "object",
       "properties": {
         "reverseDcAccessCode": {
+          "description": "Reverse DcAccess security code",
           "type": "string"
         },
         "forwardDcAccessCode": {
+          "description": "Forward DcAccess security code",
           "type": "string"
         }
       }
@@ -2220,14 +2447,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box orders."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk orders."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy orders."
               }
             ]
           }
@@ -2555,14 +2774,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box orders."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk orders."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy orders."
               }
             ]
           }
@@ -3004,6 +3215,7 @@
       "type": "object",
       "properties": {
         "preferredDataCenterRegion": {
+          "description": "Preferred data center for the order",
           "type": "array",
           "items": {
             "type": "string"
@@ -3046,14 +3258,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy."
               }
             ]
           }
@@ -3215,14 +3419,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy."
               }
             ]
           }
@@ -3518,14 +3714,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy."
               }
             ]
           }
@@ -3571,14 +3759,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy."
               }
             ]
           }
@@ -3905,10 +4085,6 @@
               {
                 "value": "StorageAccount",
                 "description": "Storage Accounts ."
-              },
-              {
-                "value": "ManagedDisk",
-                "description": "Azure Managed disk storage."
               }
             ]
           }
@@ -3993,10 +4169,6 @@
               {
                 "value": "StorageAccount",
                 "description": "Storage Accounts ."
-              },
-              {
-                "value": "ManagedDisk",
-                "description": "Azure Managed disk storage."
               }
             ]
           }
@@ -4066,14 +4238,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy."
               }
             ]
           }
@@ -4219,14 +4383,6 @@
               {
                 "value": "DataBox",
                 "description": "Data Box."
-              },
-              {
-                "value": "DataBoxDisk",
-                "description": "Data Box Disk."
-              },
-              {
-                "value": "DataBoxHeavy",
-                "description": "Data Box Heavy."
               }
             ]
           }
@@ -4263,26 +4419,6 @@
               {
                 "value": "ValidateAddress",
                 "description": "Identify request and response of address validation."
-              },
-              {
-                "value": "ValidateSubscriptionIsAllowedToCreateJob",
-                "description": "Identify request and response for validation of subscription permission to create job."
-              },
-              {
-                "value": "ValidatePreferences",
-                "description": "Identify request and response of preference validation."
-              },
-              {
-                "value": "ValidateCreateOrderLimit",
-                "description": "Identify request and response of create order limit for subscription validation."
-              },
-              {
-                "value": "ValidateSkuAvailability",
-                "description": "Identify request and response of active job limit for sku availibility."
-              },
-              {
-                "value": "ValidateDataTransferDetails",
-                "description": "Identify request and response of data transfer details validation."
               }
             ]
           }
@@ -4296,7 +4432,6 @@
         "validationType"
       ],
       "type": "object",
-      "default":  "ValidateAddress",
       "properties": {
         "validationType": {
           "description": "Identifies the type of validation response.",
@@ -4310,33 +4445,12 @@
           ],
           "type": "string",
           "x-ms-enum": {
-            "name": "ValidationInputDiscriminator",
+            "name": "ValidationType",
             "modelAsExtensible": true,
-            "modelAsString":  false,
             "values": [
               {
                 "value": "ValidateAddress",
                 "description": "Identify request and response of address validation."
-              },
-              {
-                "value": "ValidateSubscriptionIsAllowedToCreateJob",
-                "description": "Identify request and response for validation of subscription permission to create job."
-              },
-              {
-                "value": "ValidatePreferences",
-                "description": "Identify request and response of preference validation."
-              },
-              {
-                "value": "ValidateCreateOrderLimit",
-                "description": "Identify request and response of create order limit for subscription validation."
-              },
-              {
-                "value": "ValidateSkuAvailability",
-                "description": "Identify request and response of active job limit for sku availibility."
-              },
-              {
-                "value": "ValidateDataTransferDetails",
-                "description": "Identify request and response of data transfer details validation."
               }
             ]
           }
