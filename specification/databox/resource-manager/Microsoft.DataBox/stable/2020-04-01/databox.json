@@ -997,11 +997,16 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "StorageAccount",
                 "description": "Storage Accounts ."
+              },
+              {
+                "value": "ManagedDisk",
+                "description": "Azure Managed disk storage."
               }
             ]
           }
@@ -1025,7 +1030,7 @@
       "type": "object",
       "properties": {
         "type": {
-          "description": "Error type",
+          "description": "Additional Error Info type",
           "type": "string"
         },
         "info": {
@@ -1184,11 +1189,20 @@
             "type": "string",
             "x-ms-enum": {
               "name": "SkuName",
-              "modelAsExtensible": true,
+              "modelAsExtensible": false,
+              "modelAsString": true,
               "values": [
                 {
                   "value": "DataBox",
                   "description": "Data Box."
+                },
+                {
+                  "value": "DataBoxDisk",
+                  "description": "Data Box Disk."
+                },
+                {
+                  "value": "DataBoxHeavy",
+                  "description": "Data Box Heavy."
                 }
               ]
             }
@@ -1285,19 +1299,19 @@
       "type": "object",
       "properties": {
         "code": {
-          "description": "Cloud error description",
+          "description": "Cloud Error code",
           "type": "string"
         },
         "message": {
-          "description": "Cloud error message",
+          "description": "Cloud Error message",
           "type": "string"
         },
         "target": {
-          "description": "Cloud error target",
+          "description": "Cloud Error target",
           "type": "string"
         },
         "details": {
-          "description": "Cloud error details",
+          "description": "Cloud Error details",
           "type": "array",
           "items": {
             "$ref": "#/definitions/CloudError"
@@ -1305,7 +1319,7 @@
           "readOnly": true
         },
         "additionalInfo": {
-          "description": "Cloud error additional info",
+          "description": "Cloud Error additional info",
           "type": "array",
           "items": {
             "$ref": "#/definitions/AdditionalErrorInfo"
@@ -1374,10 +1388,19 @@
           "x-ms-enum": {
             "name": "ClassDiscriminator",
             "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box orders."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk orders."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy orders."
               }
             ]
           }
@@ -1427,11 +1450,16 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "StorageAccount",
                 "description": "Storage Accounts ."
+              },
+              {
+                "value": "ManagedDisk",
+                "description": "Azure Managed disk storage."
               }
             ]
           }
@@ -1546,7 +1574,8 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
@@ -1625,11 +1654,16 @@
           "type": "string",
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "StorageAccount",
-                "description": "Storage Accounts."
+                "description": "Storage Accounts ."
+              },
+              {
+                "value": "ManagedDisk",
+                "description": "Azure Managed disk storage."
               }
             ]
           }
@@ -2194,11 +2228,20 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy."
               }
             ]
           }
@@ -2443,10 +2486,19 @@
           "x-ms-enum": {
             "name": "ClassDiscriminator",
             "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box orders."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk orders."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy orders."
               }
             ]
           }
@@ -2770,10 +2822,19 @@
           "x-ms-enum": {
             "name": "ClassDiscriminator",
             "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box orders."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk orders."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy orders."
               }
             ]
           }
@@ -3215,7 +3276,7 @@
       "type": "object",
       "properties": {
         "preferredDataCenterRegion": {
-          "description": "Preferred data center for the order",
+          "description": "Preferred Data Center region",
           "type": "array",
           "items": {
             "type": "string"
@@ -3253,11 +3314,20 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy."
               }
             ]
           }
@@ -3414,11 +3484,20 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy."
               }
             ]
           }
@@ -3709,11 +3788,20 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy."
               }
             ]
           }
@@ -3754,11 +3842,20 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy."
               }
             ]
           }
@@ -4080,11 +4177,16 @@
           "type": "string",
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "StorageAccount",
                 "description": "Storage Accounts ."
+              },
+              {
+                "value": "ManagedDisk",
+                "description": "Azure Managed disk storage."
               }
             ]
           }
@@ -4164,11 +4266,16 @@
           "type": "string",
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "StorageAccount",
                 "description": "Storage Accounts ."
+              },
+              {
+                "value": "ManagedDisk",
+                "description": "Azure Managed disk storage."
               }
             ]
           }
@@ -4233,11 +4340,20 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy."
               }
             ]
           }
@@ -4378,11 +4494,20 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DataBox",
                 "description": "Data Box."
+              },
+              {
+                "value": "DataBoxDisk",
+                "description": "Data Box Disk."
+              },
+              {
+                "value": "DataBoxHeavy",
+                "description": "Data Box Heavy."
               }
             ]
           }
@@ -4414,11 +4539,32 @@
           "type": "string",
           "x-ms-enum": {
             "name": "ValidationInputDiscriminator",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "ValidateAddress",
                 "description": "Identify request and response of address validation."
+              },
+              {
+                "value": "ValidateSubscriptionIsAllowedToCreateJob",
+                "description": "Identify request and response for validation of subscription permission to create job."
+              },
+              {
+                "value": "ValidatePreferences",
+                "description": "Identify request and response of preference validation."
+              },
+              {
+                "value": "ValidateCreateOrderLimit",
+                "description": "Identify request and response of create order limit for subscription validation."
+              },
+              {
+                "value": "ValidateSkuAvailability",
+                "description": "Identify request and response of active job limit for sku availibility."
+              },
+              {
+                "value": "ValidateDataTransferDetails",
+                "description": "Identify request and response of data transfer details validation."
               }
             ]
           }
@@ -4446,11 +4592,32 @@
           "type": "string",
           "x-ms-enum": {
             "name": "ValidationType",
-            "modelAsExtensible": true,
+            "modelAsExtensible": false,
+            "modelAsString": true,
             "values": [
               {
                 "value": "ValidateAddress",
                 "description": "Identify request and response of address validation."
+              },
+              {
+                "value": "ValidateSubscriptionIsAllowedToCreateJob",
+                "description": "Identify request and response for validation of subscription permission to create job."
+              },
+              {
+                "value": "ValidatePreferences",
+                "description": "Identify request and response of preference validation."
+              },
+              {
+                "value": "ValidateCreateOrderLimit",
+                "description": "Identify request and response of create order limit for subscription validation."
+              },
+              {
+                "value": "ValidateSkuAvailability",
+                "description": "Identify request and response of active job limit for sku availibility."
+              },
+              {
+                "value": "ValidateDataTransferDetails",
+                "description": "Identify request and response of data transfer details validation."
               }
             ]
           }
