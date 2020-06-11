@@ -997,7 +997,6 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -1030,7 +1029,7 @@
       "type": "object",
       "properties": {
         "type": {
-          "description": "Additional Error Info type",
+          "description": "Additional error info type",
           "type": "string"
         },
         "info": {
@@ -1073,7 +1072,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "AddressValidationStatus",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "Valid",
@@ -1156,7 +1155,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "TransferType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "ImportToAzure",
@@ -1189,7 +1188,6 @@
             "type": "string",
             "x-ms-enum": {
               "name": "SkuName",
-              "modelAsExtensible": false,
               "modelAsString": true,
               "values": [
                 {
@@ -1299,19 +1297,19 @@
       "type": "object",
       "properties": {
         "code": {
-          "description": "Cloud Error code",
+          "description": "Cloud error code",
           "type": "string"
         },
         "message": {
-          "description": "Cloud Error message",
+          "description": "Cloud error message",
           "type": "string"
         },
         "target": {
-          "description": "Cloud Error target",
+          "description": "Cloud error target",
           "type": "string"
         },
         "details": {
-          "description": "Cloud Error details",
+          "description": "Cloud error details",
           "type": "array",
           "items": {
             "$ref": "#/definitions/CloudError"
@@ -1319,7 +1317,7 @@
           "readOnly": true
         },
         "additionalInfo": {
-          "description": "Cloud Error additional info",
+          "description": "Cloud error additional info",
           "type": "array",
           "items": {
             "$ref": "#/definitions/AdditionalErrorInfo"
@@ -1387,7 +1385,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "ClassDiscriminator",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -1427,7 +1424,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "TransferType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "ImportToAzure",
@@ -1450,7 +1447,6 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -1574,7 +1570,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -1618,7 +1613,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "ValidationStatus",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "Valid",
@@ -1654,7 +1649,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -1775,7 +1769,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "CopyStatus",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "NotStarted",
@@ -2142,7 +2136,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "LogCollectionLevel",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "Error",
@@ -2228,7 +2222,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -2255,7 +2248,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "TransferType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "ImportToAzure",
@@ -2294,7 +2287,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "ValidationStatus",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "Valid",
@@ -2318,11 +2311,11 @@
       "type": "object",
       "properties": {
         "reverseDcAccessCode": {
-          "description": "Reverse DcAccess security code",
+          "description": "Reverse DcAccess code",
           "type": "string"
         },
         "forwardDcAccessCode": {
-          "description": "Forward DcAccess security code",
+          "description": "Forward DcAccess code",
           "type": "string"
         }
       }
@@ -2382,7 +2375,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "FilterFileType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "AzureBlob",
@@ -2485,7 +2478,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "ClassDiscriminator",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -2554,7 +2546,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "TransferType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "ImportToAzure",
@@ -2611,7 +2603,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "StageName",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DeviceOrdered",
@@ -2709,7 +2701,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "JobDeliveryType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "NonScheduled",
@@ -2821,7 +2813,6 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "ClassDiscriminator",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -2880,7 +2871,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "StageName",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DeviceOrdered",
@@ -2971,7 +2962,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "StageStatus",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "None",
@@ -3041,7 +3032,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "KekType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "MicrosoftManaged",
@@ -3143,7 +3134,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "NotificationStageName",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "DevicePrepared",
@@ -3276,7 +3267,7 @@
       "type": "object",
       "properties": {
         "preferredDataCenterRegion": {
-          "description": "Preferred Data Center region",
+          "description": "Preferred data center region",
           "type": "array",
           "items": {
             "type": "string"
@@ -3314,7 +3305,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -3358,7 +3348,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "ValidationStatus",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "Valid",
@@ -3484,7 +3474,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -3588,7 +3577,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "ShareDestinationFormatType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "UnknownType",
@@ -3638,7 +3627,7 @@
             "type": "string",
             "x-ms-enum": {
               "name": "AccessProtocol",
-              "modelAsExtensible": true,
+              "modelAsString": true,
               "values": [
                 {
                   "value": "SMB",
@@ -3752,7 +3741,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "AddressType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "None",
@@ -3788,7 +3777,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -3842,7 +3830,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -3869,7 +3856,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "TransferType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "ImportToAzure",
@@ -3916,7 +3903,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "ValidationStatus",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "Valid",
@@ -4043,7 +4030,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "SkuDisabledReason",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "None",
@@ -4141,7 +4128,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "ValidationStatus",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "Valid",
@@ -4177,7 +4164,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -4217,7 +4203,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "TransferConfigurationType",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "TransferAll",
@@ -4266,7 +4252,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "DataAccountType",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -4311,7 +4296,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "TransportShipmentTypes",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "CustomerManaged",
@@ -4340,7 +4325,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -4390,7 +4374,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "TransportShipmentTypes",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "CustomerManaged",
@@ -4494,7 +4478,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "SkuName",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -4539,7 +4522,6 @@
           "type": "string",
           "x-ms-enum": {
             "name": "ValidationInputDiscriminator",
-            "modelAsExtensible": false,
             "modelAsString": true,
             "values": [
               {
@@ -4591,8 +4573,7 @@
           ],
           "type": "string",
           "x-ms-enum": {
-            "name": "ValidationType",
-            "modelAsExtensible": false,
+            "name": "ValidationInputDiscriminator",
             "modelAsString": true,
             "values": [
               {
@@ -4646,7 +4627,7 @@
           "type": "string",
           "x-ms-enum": {
             "name": "ValidationCategory",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "JobCreationValidation",
@@ -4692,7 +4673,7 @@
           "readOnly": true,
           "x-ms-enum": {
             "name": "OverallValidationStatus",
-            "modelAsExtensible": true,
+            "modelAsString": true,
             "values": [
               {
                 "value": "AllValidToProceed",
